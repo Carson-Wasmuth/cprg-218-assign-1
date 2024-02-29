@@ -1,44 +1,76 @@
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    
-    .card {
-      width: 100%;
-      margin-bottom: 20px; 
-    }
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
+  width: 24rem;
+}
+
+img {
+  border-bottom: 0.25rem solid #fc0;
+  border-radius: 0.25rem 0.25rem 0 0;
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    min-height: 15.5rem;
   }
-  
-  /* Tablet Styles */
-  @media screen and (min-width: 768px) {
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    
-    .card {
-      width: calc(50% - 10px);
-      margin-bottom: 20px;
-    }
-    
-    .card:nth-child(4n) {
-      width: 100%;
-    }
+}
+
+@media screen and (min-width: 1200px) {
+  img {
+    min-height: 16.375rem;
   }
-  
-  /* Desktop Styles */
-  @media screen and (min-width: 1200px) {
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    
-    .card {
-      width: calc(33.33% - 20px);
-    }
+}
+
+/* Responsive Card Sizing */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
   }
+  .card img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .card {
+    width: calc(50% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 0.25rem;
+    box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
+    float: left;
+  }
+  .card img {
+    width: 100%;
+    border-bottom: 0.25rem solid #fc0;
+    border-radius: 0.25rem 0.25rem 0 0;
+    height: auto;
+  }
+  .card:nth-child(odd) {
+    clear: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card {
+    width: calc(33.333% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+  }
+  .card img {
+    width: 100%;
+    min-height: 16.375rem;
+  }
+  .card:nth-child(3n) {
+    margin-right: 0;
+    clear: none;
+  }
+}
+
+
